@@ -1,0 +1,21 @@
+server:
+  port: 8282
+
+spring:
+  application:
+    name: chat-service
+  ai:
+    ollama:
+      chat:
+        model: llama2
+      embedding:
+        model: llama2
+  threads:
+    virtual:
+      enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

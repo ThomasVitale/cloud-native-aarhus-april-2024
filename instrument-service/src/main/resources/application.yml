@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: instrument-service
+  threads:
+    virtual:
+      enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    tags:
+      application: ${spring.application.name}
+  opentelemetry:
+    resource-attributes:
+      application: ${spring.application.name}
+  otlp:
+    tracing:
+      endpoint: http://localhost:4318/v1/traces
+  tracing:
+    sampling:
+      probability: 1.0
+  prometheus:
+    metrics:
+      export:
+        step: 5s
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: always
+      show-components: always
