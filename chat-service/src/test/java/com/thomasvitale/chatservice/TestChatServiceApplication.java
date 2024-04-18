@@ -25,7 +25,7 @@ public class TestChatServiceApplication {
 	@ServiceConnection
 	@Profile("ollama")
 	OllamaContainer ollama() {
-		return new OllamaContainer(DockerImageName.parse("ghcr.io/thomasvitale/ollama-llama2")
+		return new OllamaContainer(DockerImageName.parse("ghcr.io/thomasvitale/ollama-llama3")
 				.asCompatibleSubstituteFor("ollama/ollama"));
 	}
 
